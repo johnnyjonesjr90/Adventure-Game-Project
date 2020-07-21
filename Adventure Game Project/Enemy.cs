@@ -21,6 +21,7 @@ namespace Adventure_Game_Project
                 if (value <= 0)
                 {
                     _health = 50;
+                    
                 }
                 else if (value >= 300)
                 {

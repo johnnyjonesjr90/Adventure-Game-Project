@@ -28,7 +28,7 @@ namespace Adventure_Game_Project
                         Access.INventory();
                         break;
                     case 3:
-                        Mechanics.gameOver();
+                        Mechanics.gameOver1();
                         break;
                 }
             }

@@ -5,14 +5,14 @@ using System.Threading;
 
 namespace Adventure_Game_Project
 {
-    
-   
+
+
     class Program
     {
         public static Player john = new Player();
         public static Enemy demon = new Enemy();
         public static Access access1 = new Access();
-
+        public static Enemy CultLeader = new Enemy();
 
 
 
@@ -20,7 +20,13 @@ namespace Adventure_Game_Project
 
         static void Main(string[] args)
         {
-            string name ="name...?";
+
+            StartMenu.SMenu();
+            Console.Clear();
+            Console.WriteLine("Press Enter to Continue....");
+            Console.ReadLine();
+            Console.Clear();
+            string name = "name...?";
             foreach (var character in name)
             {
                 Console.Write(character);
@@ -39,20 +45,29 @@ namespace Adventure_Game_Project
                 Thread.Sleep(10);
             }
             Console.WriteLine();
-            Console.WriteLine("Press Enter");
+            Console.WriteLine("Press Enter to Continue....");
             Console.ReadLine();
             Console.Clear();
-            string intro1 ="~~This should be a simple job, I dont think I need my entire kit~~:\n" +
+            choice1:
+            
+            string intro1 = "~~This should be a simple job, I dont think I need my entire kit~~:\n" +
             "1 - Take crowbar\n" +
             "2 - Take knife\n" +
-            "3 - Take pistol";
+            "3 - Take pistol\n\n" +
+            "Choose a number and Press Enter";
             foreach (var character in intro1)
             {
                 Console.Write(character);
                 Thread.Sleep(10);
             }
             Console.WriteLine();
+
             int choice = Convert.ToInt32(Console.ReadLine());
+            if (choice != 1 && choice != 2 && choice != 3)
+            {
+                Console.Clear();
+                goto choice1;
+            }
             switch (choice)
             {
                 case 1:
@@ -74,16 +89,20 @@ namespace Adventure_Game_Project
                     break;
             }
             Console.Clear();
-            string intro2 = "....This is where Ill explain story and give exposition... ultimately they see the house.. its big they start to loot it when they discover \nthe old people were in a cult " +
-                "They left the house to the cult and they are doing rituals. They capture your friend and sacrifice him to bring a demon into the world.. the house cant be left\n" +
-                "you try to escape but gets knocked out by a cultist. you wake up weak due to the hit.. and the house seems to be empty.. you try the door but it wont budge...\n";
+            string intro2 = "You and Jake make your way to the house and begin to scope it out. 'Yo man it looks like theres just a few dudes here, we can wait until\n" +
+                "they leave and see what we can find.' You  wait until the sun goes down and the men leave in a large black van... Jake leads you to a window in the front of \n" +
+                " the house and you make your way through.. as soon as you climb in you see Jake standing with his hands up shaking his head. You see several men in long robes \n" +
+                " with hood pointing a gun at him. Before you can say a word he pulls out his switch blade and cuts one of the men's arms and wrestle the one with the gun to the\n" +
+                "ground. They eventually knock him out and drag the two of you to a courtyard in the house. they place Jake on a large table and hit you in the back of the head. \n" +
+                "You go in and out of conciousness but you were able to see what looks like them strabbing him and then a brignt light emits from far on the other side of the yard..\n" +
+                "You gather your strength and run to the front door, its locked so you look around and decide to hide under a large tarp.... you black out......";
             foreach (var character in intro2)
             {
                 Console.Write(character);
                 Thread.Sleep(10);
             }
             Console.WriteLine();
-            Console.WriteLine("You make your way into the foyer\n" +
+            Console.WriteLine("You wake up and head towards the front door, it wont budge... you hear what sounds like footsteps in the distance... youve got to get out of here....\n" +
                 "Press Enter...");
             Console.ReadLine();
             Console.Clear();
@@ -93,19 +112,20 @@ namespace Adventure_Game_Project
                 Console.Clear();
                 Console.WriteLine();
             CChoice:
-                Console.WriteLine("The door is blocked...you decide to venture further.....\n\n" +
+                Console.WriteLine("Since the door is blocked...you decide to venture further.....\n\n" +
                     "\n" +
                     "1 - Hallway \n" +
-                    "2 - Courtyard (Under Developer construction)\n" +
-                    "3 - Stairwell (Under Developer construction) \n" +
+                    "2 - Courtyard \n" +
+                    "3 - Stairwell  \n" +
                     "4 - MENU");
                 Console.WriteLine();
                 string choice1 = Console.ReadLine();
-
+                if ( choice1 != "1" && choice1 != "2" && choice1 != "3"&& choice1 != "4")
+                    goto CChoice;
                 if (choice1 == "1")
                 {
                     Console.Clear();
-                    Console.WriteLine("You run into the hall, at least its quiet but there are several inches of water on the floor. \n" +
+                    Console.WriteLine("You run into the hall, at least its quiet. \n" +
                         "Press enter...");
                     Console.ReadLine();
                     Console.Clear();

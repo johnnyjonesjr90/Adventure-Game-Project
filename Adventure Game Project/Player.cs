@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Adventure_Game_Project
@@ -8,8 +9,10 @@ namespace Adventure_Game_Project
     public class Player
     {
         public int CYentry = 0;
+        public int entry = 1;
         public string Name { get; set; }
         //public int SANITY = 0;
+        
         
         public int lockpick = 0;
         public int boots = 0;
@@ -23,7 +26,7 @@ namespace Adventure_Game_Project
         public int _axe = 25;
 
         //Items needed to progress 
-        public int key01 = 0;
+        public int key01 = 0;//Key for the wood door in courtyard
         public int key02 = 0; //Metal Key for courtyard door
         public int crowbar = 0;
         public int shard = 0; //end of game requirement
@@ -34,10 +37,14 @@ namespace Adventure_Game_Project
         public int Container001 = 1; //hallway container
         public int dagger = 0; //rusty daggar
         public int liquid = 0;//blue liquid
-        
+        public int Container002 = 1;//foyer container
+
         public int cytents = 0;
         public int woodpuzzle1 = 0;
         public int woodpuzzleaccess = 0;
+        public int woodpuzzleaccess2 = 0;
+        public int woodpuzzleaccess3 = 0;
+
         private int _health = 100;
         public int health
         {

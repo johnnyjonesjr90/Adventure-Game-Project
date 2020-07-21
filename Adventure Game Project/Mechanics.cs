@@ -40,11 +40,17 @@ namespace Adventure_Game_Project
                     Console.WriteLine();
                     Console.WriteLine("///// Enemy Health remaining: " + Program.demon.health + "\n\n Press Enter...");
                     Console.ReadLine();
+                    if (Program.demon.health == 0)
+                    {
+                        Console.WriteLine("Youve killed one of the demon..... im sure there are more....");
+                        Console.ReadLine();
+                        Console.Clear();
+                    }
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.BackgroundColor = ConsoleColor.Black;
                     return (Program.john.health, Program.demon.health);
                 }
-                else if (Program.john.pistol == 1 && Program.john.bullets <= 0)
+                else if (Program.john.pistol >= 1 && Program.john.bullets <= 0)
                 {
                     Console.WriteLine("You pull out your pistol but you dont have any more bullets......");
                     Console.WriteLine();
@@ -71,6 +77,12 @@ namespace Adventure_Game_Project
                         Console.WriteLine("///// Health remaining: " + Program.john.health + "\n\n Press Enter...");
                         Console.WriteLine("///// Enemy Health remaining: " + Program.demon.health + "\n\n Press Enter...");
                         Console.ReadLine();
+                        if (Program.demon.health == 0)
+                        {
+                            Console.WriteLine("Youve killed one of the demon..... im sure there are more....");
+                            Console.ReadLine();
+                            Console.Clear();
+                        }
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.BackgroundColor = ConsoleColor.Black;
                         return (Program.john.health, Program.demon.health);
@@ -95,17 +107,21 @@ namespace Adventure_Game_Project
                     return (Program.john.health, Program.demon.health);
 
                 }
-                else if (Program.john.pistol == 0 )
+                else if (Program.john.pistol >= 0 )
                 {
                     Console.BackgroundColor = ConsoleColor.Red;
                     Console.ForegroundColor = ConsoleColor.Black;
                     if (Program.john.axe == 1 || Program.john.knife == 1)
                     {
-
+                        Console.WriteLine("You turn to see a creature running towards you...");
+                        Console.ReadLine();
+                        Console.Clear();
                         Console.WriteLine("You pull out your blade......");
                         Console.ReadLine();
                         Console.Clear();
                         Console.WriteLine("You swing wildly and manage to connect a few hits....");
+                        Console.ReadLine();
+                        Console.Clear();
                         Program.demon.health -= 25;
                         Console.WriteLine("You did 25 damage \n\n Press Enter...");
                         Console.ReadLine();
@@ -117,7 +133,13 @@ namespace Adventure_Game_Project
                         Console.Clear();
                         Console.WriteLine();
                         Console.WriteLine("///// Health remaining: " + Program.john.health + "\n\n Press Enter...");
-                        Console.WriteLine("///// Enemy Health remaining: " + Program.demon.health + "\n\n Press Enter...");                        
+                        Console.WriteLine("///// Enemy Health remaining: " + Program.demon.health + "\n\n Press Enter...");
+                        if (Program.demon.health == 0)
+                        {
+                            Console.WriteLine("Youve killed one of the demon..... im sure there are more....");
+                            Console.ReadLine();
+                            Console.Clear();
+                        }
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.BackgroundColor = ConsoleColor.Black;
                         Console.ReadLine();
@@ -167,7 +189,15 @@ namespace Adventure_Game_Project
             }
             Console.WriteLine("You Have Died....");
             Console.ReadLine();
+            Environment.Exit(0);
+        }
+        public static void gameOver1()
+        {
             
+                Console.WriteLine("Thank You for Playing my game!!");
+                Console.ReadLine();
+                Environment.Exit(0);
+
         }
     }
 }
